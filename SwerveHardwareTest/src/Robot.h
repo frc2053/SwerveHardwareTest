@@ -4,6 +4,7 @@
 #include "TimedRobot.h"
 #include "Timer.h"
 #include <fstream>
+#include <sstream>
 
 class Robot : public frc::TimedRobot {
 public:
@@ -15,12 +16,13 @@ public:
 	virtual void TeleopInit();
 	virtual void TeleopPeriodic();
 	virtual void TestPeriodic();
+	void SetSpeed(double tempSpeed);
 private:
 	frc::Timer testTimer;
 	double timeToRunTests;
 	double currentTime;
 	double currentSpeed;
-	std::string m_OutputString;
+	std::stringstream m_OutputString;
 	std::ofstream m_TestFile;
 	
 	/*std::ofstream testFileFLD;

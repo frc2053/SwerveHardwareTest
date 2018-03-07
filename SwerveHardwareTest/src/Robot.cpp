@@ -26,7 +26,6 @@ void Robot::AutonomousPeriodic() {
 void Robot::TeleopInit() {
 	std::cout << "Teleop Init!" << std::endl;
 	
-	m_OutputString = "";
 		
 	testTimer.Reset();
 	testTimer.Start();
@@ -92,55 +91,55 @@ void Robot::TeleopPeriodic() {
 
 	if(currentTime <= timeToRunTests) {
 		//Drive Talons
-		m_OutputString	+=currentTime
+		m_OutputString	<< currentTime
 			
-				+ ", " + RobotMap::swerveSubsystemFLDriveTalon->GetMotorOutputVoltage()
-				+ ", " + RobotMap::swerveSubsystemFLDriveTalon->GetOutputCurrent()
-				+ ", " + RobotMap::swerveSubsystemFLDriveTalon->GetSelectedSensorPosition(0)
-				+ ", " + RobotMap::swerveSubsystemFLDriveTalon->GetSelectedSensorVelocity(0)
+				<< ", " << RobotMap::swerveSubsystemFLDriveTalon->GetMotorOutputVoltage()
+				<< ", " << RobotMap::swerveSubsystemFLDriveTalon->GetOutputCurrent()
+				<< ", " << RobotMap::swerveSubsystemFLDriveTalon->GetSelectedSensorPosition(0)
+				<< ", " << RobotMap::swerveSubsystemFLDriveTalon->GetSelectedSensorVelocity(0)
 			
-				+ ", " + RobotMap::swerveSubsystemFRDriveTalon->GetMotorOutputVoltage()
-				+ ", " + RobotMap::swerveSubsystemFRDriveTalon->GetOutputCurrent()
-				+ ", " + RobotMap::swerveSubsystemFRDriveTalon->GetSelectedSensorPosition(0)
-				+ ", " + RobotMap::swerveSubsystemFRDriveTalon->GetSelectedSensorVelocity(0)
+				<< ", " << RobotMap::swerveSubsystemFRDriveTalon->GetMotorOutputVoltage()
+				<< ", " << RobotMap::swerveSubsystemFRDriveTalon->GetOutputCurrent()
+				<< ", " << RobotMap::swerveSubsystemFRDriveTalon->GetSelectedSensorPosition(0)
+				<< ", " << RobotMap::swerveSubsystemFRDriveTalon->GetSelectedSensorVelocity(0)
 	
-			 	+ ", " + RobotMap::swerveSubsystemBLDriveTalon->GetMotorOutputVoltage()
-				+ ", " + RobotMap::swerveSubsystemBLDriveTalon->GetOutputCurrent()
-				+ ", " + RobotMap::swerveSubsystemBLDriveTalon->GetSelectedSensorPosition(0)
-				+ ", " + RobotMap::swerveSubsystemBLDriveTalon->GetSelectedSensorVelocity(0)
+				<< ", " << RobotMap::swerveSubsystemBLDriveTalon->GetMotorOutputVoltage()
+				<< ", " << RobotMap::swerveSubsystemBLDriveTalon->GetOutputCurrent()
+				<< ", " << RobotMap::swerveSubsystemBLDriveTalon->GetSelectedSensorPosition(0)
+				<< ", " << RobotMap::swerveSubsystemBLDriveTalon->GetSelectedSensorVelocity(0)
 
-				+ ", " + RobotMap::swerveSubsystemBRDriveTalon->GetMotorOutputVoltage()
-				+ ", " + RobotMap::swerveSubsystemBRDriveTalon->GetOutputCurrent()
-				+ ", " + RobotMap::swerveSubsystemBRDriveTalon->GetSelectedSensorPosition(0)
-				+ ", " + RobotMap::swerveSubsystemBRDriveTalon->GetSelectedSensorVelocity(0)
+				<< ", " << RobotMap::swerveSubsystemBRDriveTalon->GetMotorOutputVoltage()
+				<< ", " << RobotMap::swerveSubsystemBRDriveTalon->GetOutputCurrent()
+				<< ", " << RobotMap::swerveSubsystemBRDriveTalon->GetSelectedSensorPosition(0)
+				<< ", " << RobotMap::swerveSubsystemBRDriveTalon->GetSelectedSensorVelocity(0)
 
 		//Rotation Talons
-				+ ", " + RobotMap::swerveSubsystemFLRotTalon->GetMotorOutputVoltage()
-				+ ", " + RobotMap::swerveSubsystemFLRotTalon->GetOutputCurrent()
-				+ ", " + RobotMap::swerveSubsystemFLRotTalon->GetSelectedSensorPosition(0)
-				+ ", " + RobotMap::swerveSubsystemFLRotTalon->GetSelectedSensorVelocity(0)
+				<< ", " << RobotMap::swerveSubsystemFLRotTalon->GetMotorOutputVoltage()
+				<< ", " << RobotMap::swerveSubsystemFLRotTalon->GetOutputCurrent()
+				<< ", " << RobotMap::swerveSubsystemFLRotTalon->GetSelectedSensorPosition(0)
+				<< ", " << RobotMap::swerveSubsystemFLRotTalon->GetSelectedSensorVelocity(0)
 
-				+ ", " + RobotMap::swerveSubsystemFRRotTalon->GetMotorOutputVoltage()
-				+ ", " + RobotMap::swerveSubsystemFRRotTalon->GetOutputCurrent()
-				+ ", " + RobotMap::swerveSubsystemFRRotTalon->GetSelectedSensorPosition(0)
-				+ ", " + RobotMap::swerveSubsystemFRRotTalon->GetSelectedSensorVelocity(0)
+				<< ", " << RobotMap::swerveSubsystemFRRotTalon->GetMotorOutputVoltage()
+				<< ", " << RobotMap::swerveSubsystemFRRotTalon->GetOutputCurrent()
+				<< ", " << RobotMap::swerveSubsystemFRRotTalon->GetSelectedSensorPosition(0)
+				<< ", " << RobotMap::swerveSubsystemFRRotTalon->GetSelectedSensorVelocity(0)
 
-				+ ", " + RobotMap::swerveSubsystemBLRotTalon->GetMotorOutputVoltage()
-				+ ", " + RobotMap::swerveSubsystemBLRotTalon->GetOutputCurrent()
-				+ ", " + RobotMap::swerveSubsystemBLRotTalon->GetSelectedSensorPosition(0)
-				+ ", " + RobotMap::swerveSubsystemBLRotTalon->GetSelectedSensorVelocity(0)
+				<< ", " << RobotMap::swerveSubsystemBLRotTalon->GetMotorOutputVoltage()
+				<< ", " << RobotMap::swerveSubsystemBLRotTalon->GetOutputCurrent()
+				<< ", " << RobotMap::swerveSubsystemBLRotTalon->GetSelectedSensorPosition(0)
+				<< ", " << RobotMap::swerveSubsystemBLRotTalon->GetSelectedSensorVelocity(0)
 
-				+ ", " + RobotMap::swerveSubsystemBRRotTalon->GetMotorOutputVoltage()
-				+ ", " + RobotMap::swerveSubsystemBRRotTalon->GetOutputCurrent()
-				+ ", " + RobotMap::swerveSubsystemBRRotTalon->GetSelectedSensorPosition(0)
-				+ ", " + RobotMap::swerveSubsystemBRRotTalon->GetSelectedSensorVelocity(0)
-				+ "\n";
+				<< ", " << RobotMap::swerveSubsystemBRRotTalon->GetMotorOutputVoltage()
+				<< ", " << RobotMap::swerveSubsystemBRRotTalon->GetOutputCurrent()
+				<< ", " << RobotMap::swerveSubsystemBRRotTalon->GetSelectedSensorPosition(0)
+				<< ", " << RobotMap::swerveSubsystemBRRotTalon->GetSelectedSensorVelocity(0)
+				<< "\n";
 	}
 	else {
 		SetSpeed(0);
 		
 		m_TestFile.open("/home/lvuser/TestFile.csv");
-		m_TestFile << m_OutputString;
+		m_TestFile << m_OutputString.str();
 		m_TestFile.flush();
 		m_TestFile.close();
 		
